@@ -1,6 +1,13 @@
 // Cria a função que toca o áudio
-function tocaSom(idElementoAudio) {
-    document.querySelector(idElementoAudio).play();
+function tocaSom(seletorAudio) {
+    const elemento = document.querySelector(seletorAudio);
+
+    if (!elemento)
+        console.log("Elemento nulo ou não encontrado para esta função");
+    else if (elemento.localName != "audio")
+        console.log("Elemento não permitido para a função play");
+    else 
+        elemento.play();
 }
 
 // Armazena uma lista com todas as teclas
